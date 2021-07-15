@@ -30,7 +30,7 @@ If installing packages is not your thing, or you have too many packages, I've al
 
 1. Create a reference to your outer div (We’ll be using `useRef`)
 
-```react
+```js
 const node = useRef();
 ... some other code ...
 return (
@@ -42,7 +42,7 @@ return (
 
 2. Add event listener mousedown (or click) to the document whenever this component is appear on screen (eg. mount) and also don’t forget to remove the event on unmount too. (This time, We will be using `useEffect` to handle it.)
 
-```react
+```js
 useEffect(() => {
   // add when mounted
   document.addEventListener("mousedown", handleClick);
@@ -55,7 +55,7 @@ useEffect(() => {
 
 3. Inside the event (handleClick) **node.current.contains(e.target)** will return true if whatever you are clicking is inside the “node” ref.
 
-```react
+```js
 const handleClick = e => {
   if (node.current.contains(e.target)) {
     // inside click
